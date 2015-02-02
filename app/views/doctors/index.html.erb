@@ -2,39 +2,21 @@
 
 <h1>Listing Doctors</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Sex</th>
-      <th>Img</th>
-      <th>Hospital</th>
-      <th>Depart</th>
-      <th>Price</th>
-      <th>Expdays</th>
-      <th>Comment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @doctors.each do |doctor| %>
 
-  <tbody>
-    <% @doctors.each do |doctor| %>
-      <tr>
-        <td><%= doctor.name %></td>
-        <td><%= doctor.sex %></td>
-        <td><%= doctor.img %></td>
-        <td><%= doctor.hospital %></td>
-        <td><%= doctor.depart %></td>
-        <td><%= doctor.price %></td>
-        <td><%= doctor.expDays %></td>
-        <td><%= doctor.comment %></td>
-        <td><%= link_to 'Show', doctor %></td>
-        <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
-        <td><%= link_to 'Destroy', doctor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div>
+    <img src="images/20111216050625.gif">
+  </div>
+  <div class="link row clearfix">
+    <h2>
+      <%= doctor.name %> - <%= doctor.hospital %><br>
+      <small class="author"><%= doctor.depart %></small>
+    </h2>
+    <td><%= link_to 'Show', doctor %></td>
+    <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
+    <td><%= link_to 'Destroy', doctor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </div>
+<% end %>
 
 <br>
 
