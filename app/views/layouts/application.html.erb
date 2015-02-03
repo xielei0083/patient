@@ -3,6 +3,7 @@
 <html>
 <head>
   <title>Patient</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,12 +18,12 @@
     </div>
   </header>
 
-	<div id="main_content" class="container">
+	<div id="main_content">
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert alert-info") %>
 		<% end %>
 
-			<div id="content" class="col-md-9 center-block">
+			<div id="content">
 				<%= yield %>
 			</div>
 		</div>

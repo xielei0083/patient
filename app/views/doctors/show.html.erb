@@ -1,44 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @doctor.name %>
-</p>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @doctor.sex %>
-</p>
+<div class="container">
+  <p><%=  @doctor.name %> - <%= @doctor.hospital %></p>
+  <div style="width:25%; float:left; margin:13px 10px; border-radius:10px;">
+    <%= image_tag @doctor.img %>
+  </div>
+  <div style="height:80px; width:65%; float:left; margin-left:4px;margin-top:13px;">
+    <p><small class="author">性别：<%= @doctor.sex %></small></p>
+    <p><small class="author">所在科室：<%= @doctor.depart %></small></p>
+    <p><small class="author">单价：<%= @doctor.price %></small></p>
+    <p><small class="author">有效期：<%= @doctor.expDays %> （天）</small></p>
+  </div>
+  <div style="margin-top:160px">
+      <p><b>简介：</b><small class="author"><%= @doctor.comment %></small></p>
+      <%= link_to 'Edit', edit_doctor_path(@doctor) %> |
+      <%= link_to 'Back', doctors_path %>
+  </div>
+</div>
 
-<p>
-  <strong>Img:</strong>
-  <%= @doctor.img %>
-</p>
 
-<p>
-  <strong>Hospital:</strong>
-  <%= @doctor.hospital %>
-</p>
-
-<p>
-  <strong>Depart:</strong>
-  <%= @doctor.depart %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @doctor.price %>
-</p>
-
-<p>
-  <strong>Expdays:</strong>
-  <%= @doctor.expDays %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= @doctor.comment %>
-</p>
-
-<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
-<%= link_to 'Back', doctors_path %>

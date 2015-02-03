@@ -5,6 +5,14 @@ class DoctorsController < ApplicationController
   # GET /doctors.json
   def index
     @doctors = Doctor.all
+    @hospitals = []
+    @departs = []
+
+    @doctors.each_with_index do |doctor, index|
+      @hospitals[index] =  doctor.hospital
+      @departs[index] =  doctor.depart
+    end
+
   end
 
   # GET /doctors/1
